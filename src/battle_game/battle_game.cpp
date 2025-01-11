@@ -1,3 +1,4 @@
+//Forked by whiteqwq 
 #include "battle_game/app/app.h"
 #include "battle_game/core/game_core.h"
 #include "battle_game/graphics/graphics.h"
