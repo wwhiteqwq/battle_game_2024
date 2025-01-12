@@ -17,6 +17,7 @@ class Whiteheavyweapon : public Unit {
   [[nodiscard]] const char *Author() const override;
 
   float turret_rotation_{0.0f};
+  uint32_t ok_fire_count_{0};
   uint32_t fire_count_down_{0};
   uint32_t mine_count_down_{0};
 };

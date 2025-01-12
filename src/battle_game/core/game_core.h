@@ -22,6 +22,7 @@ constexpr int kTickPerSecond = 60;
 constexpr float kSecondPerTick = 1.0f / float(kTickPerSecond);
 class GameCore {
  public:
+  glm::vec2 GetNearestEnemy(glm::vec2 position, uint32_t player_id);
   GameCore();
 
   void SetScene();
@@ -98,12 +99,12 @@ class GameCore {
       const {
     return bullets_;
   }
-  [[nodiscard]] const std::map<uint32_t, std::unique_ptr<Particle>>
-      &GetParticles() const {
+  [[nodiscard]] const std::map<uint32_t, std::unique_ptr<Particle>> &
+  GetParticles() const {
     return particles_;
   }
-  [[nodiscard]] const std::map<uint32_t, std::unique_ptr<Obstacle>>
-      &GetObstacles() const {
+  [[nodiscard]] const std::map<uint32_t, std::unique_ptr<Obstacle>> &
+  GetObstacles() const {
     return obstacles_;
   }
   [[nodiscard]] const std::map<uint32_t, std::unique_ptr<Player>> &GetPlayers()

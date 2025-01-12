@@ -34,7 +34,7 @@ Whiteheavyweapon::Whiteheavyweapon(GameCore *game_core,
                {0.0f, 0.0f},
                {1.0f, 1.0f, 1.0f, 1.0f}},  // Vertex 4 (back right)
           },
-          {0, 1, 2, 1, 2, 3});  // 梯形索引
+          {0, 1, 2, 1, 2, 3});
       /*tank_body_model_index = mgr->RegisterModel(
           {
               {{-0.8f, 0.8f}, {0.0f, 0.0f}, {1.0f, 1.0f, 1.0f, 1.0f}},
@@ -155,7 +155,7 @@ void Whiteheavyweapon::Fire() {
       auto &input_data = player->GetInputData();
       if (input_data.mouse_button_down[GLFW_MOUSE_BUTTON_LEFT]) {
         auto velocity = Rotate(glm::vec2{0.0f, 20.0f}, turret_rotation_);
-        GenerateBullet<bullet::CannonBall>(
+        GenerateBullet<bullet::WhiteheavyweaponNormalattack>(
             position_ + Rotate({0.0f, 1.2f}, turret_rotation_),
             turret_rotation_, GetDamageScale(), velocity);
         fire_count_down_ = kTickPerSecond;  // Fire interval 1 second.
